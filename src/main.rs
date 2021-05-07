@@ -1,41 +1,46 @@
-use std::{fs::File, io::BufReader};
+#![allow(unused_imports)]
 use std::io::prelude::*;
 use std::path::Path;
 
-use proconio::input;
 use proconio::source::auto::AutoSource;
-use proconio::source::line::LineSource;
+use std::fs::File;
 
 const NEEDLE: &'static str = "/**===============**/";
 
-fn main() {
-  let path = Path::new("./input.txt");
-  let mut v = File::open(path).unwrap();
-  let mut s = String::new();
-  v.read_to_string(&mut s).unwrap();
+mod solve;
+use solve::main as solve;
 
-  let standard_inputs = s
-    .split(NEEDLE)
-    .collect::<Vec<&str>>()
-    .into_iter()
-    .map(|v| v.trim().to_string())
-    .filter(|v| !v.is_empty())
-    .collect::<Vec<String>>();
-  
-  for s in standard_inputs {
-    let source = AutoSource::from(s.as_str());
-    solve(source);
-  }
+fn read_file(input: &str) -> String {
+    let path = Path::new(&input);
+    let mut v = File::open(path).unwrap();
+    let mut s = String::new();
+    v.read_to_string(&mut s).unwrap();
+    s
 }
 
-fn solve(source: LineSource<BufReader<&[u8]>>) {
-  /* SUBMIT AREA */
-  input! {
-    from source,    // NEED TO BE COMMENT OUT WHEN SUBMIT
-    n: [usize;3]
-  }
+fn main() {
+    let s = read_file("./input.txt");
+    let standard_inputs = s
+        .split(NEEDLE)
+        .map(|v| v.trim())
+        .filter(|v| !v.is_empty())
+        .collect::<Vec<_>>();
 
+    for s in standard_inputs {
+        let source = AutoSource::from(s);
+        solve(source);
 
-  println!("{:?}", n);
-  /* SUBMIT AREA */
+        println!(
+            "
+============================================",
+        )
+    }
+
+    let s = read_file("./src/solve.rs");
+    let s = s
+        .split("\n")
+        .filter(|v| v.find("NEED TO BE COMMENT OUT WHEN SUBMIT").is_none())
+        .collect::<Vec<_>>()
+        .join("\n");
+    println!("{}", s);
 }
