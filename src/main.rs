@@ -3,7 +3,9 @@ use std::io::prelude::*;
 use std::path::Path;
 
 use proconio::source::auto::AutoSource;
+use std::fs;
 use std::fs::File;
+use std::io::Write;
 
 const NEEDLE: &'static str = "/**===============**/";
 
@@ -42,5 +44,7 @@ fn main() {
         .filter(|v| v.find("NEED TO BE COMMENT OUT WHEN SUBMIT").is_none())
         .collect::<Vec<_>>()
         .join("\n");
-    println!("{}", s);
+
+    let mut file = File::create("./output/solution.rs").unwrap();
+    file.write_all(s.as_bytes()).unwrap();
 }
