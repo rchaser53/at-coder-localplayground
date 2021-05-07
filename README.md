@@ -1,2 +1,2 @@
 # HOW TO USE
-cargo test -- --nocapture b.rs
+cargo test -- --nocapture b

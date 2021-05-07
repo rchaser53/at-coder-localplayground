@@ -40,8 +40,11 @@ pub fn read_file(
         )
     }
 
-    let s = format!(r#"/* OUTPUT FILE */
-{}"#, extract_file_content(solution_path));
+    let s = format!(
+        r#"/* OUTPUT FILE */
+{}"#,
+        extract_file_content(solution_path)
+    );
     let s = s
         .split("\n")
         .filter(|v| v.find("NEED TO BE COMMENT OUT WHEN SUBMIT").is_none())
