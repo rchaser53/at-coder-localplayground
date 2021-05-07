@@ -7,7 +7,7 @@ mod solutions;
 use solutions::a::main as solve;
 
 #[test]
-fn a() {
+fn b() {
     let v = file!();
     let base_path = Path::new(v);
     let file_stem = base_path.file_stem().unwrap();
