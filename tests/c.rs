@@ -5,10 +5,10 @@ mod utils;
 use utils::read_file;
 
 mod solutions;
-use solutions::a::main as solve;
+use solutions::c::main as solve;
 
 #[test]
-fn a() {
+fn c() {
     let v = file!();
     let base_path = Path::new(v);
     let file_stem = base_path.file_stem().unwrap();

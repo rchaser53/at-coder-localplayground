@@ -1,10 +1,11 @@
+#![allow(unused_imports)]
 use std::path::Path;
 
 mod utils;
 use utils::read_file;
 
 mod solutions;
-use solutions::a::main as solve;
+use solutions::b::main as solve;
 
 #[test]
 fn b() {
@@ -24,7 +25,7 @@ fn b() {
         file_stem.to_str().unwrap()
     );
     let output_path = format!(
-        "{}/outputs/{}.rs",
+        "{}/outputs/{}",
         file_parent.to_str().unwrap(),
         file_stem.to_str().unwrap()
     );
