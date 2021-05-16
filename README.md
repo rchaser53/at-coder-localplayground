@@ -1,2 +1,2 @@
 # HOW TO USE
-cargo test -- --nocapture b
+RUSTFLAGS="-Z force-overflow-checks=off" cargo test -- --nocapture a
