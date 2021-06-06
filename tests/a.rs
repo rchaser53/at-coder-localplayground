@@ -1,4 +1,6 @@
 #![allow(unused_imports)]
+#![allow(dead_code)]
+#![allow(unused_assignments)]
 use std::path::Path;
 
 mod utils;
