@@ -4,6 +4,5 @@ output/solution.rs
 tests/inputs/*
 tests/solutions/*
 tests/outputs/*
-!tests/inputs/.gitkeep
-!tests/solutions/.gitkeep
-!tests/outputs/.gitkeep
+input/*
+!.gitkeep
