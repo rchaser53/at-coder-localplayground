@@ -1,6 +1,4 @@
-|| {
-/**** OUTPUT ****/
-
+/** OUTPUT **/
 use proconio::input;
 use proconio::marker::*;
 use std::collections::*;
@@ -10,9 +8,4 @@ fn main() {
   input!{
     n:usize,
   }
-}
-
-/**** OUTPUT ****/
-
-  main();
 }

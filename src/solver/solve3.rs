@@ -1,17 +1,18 @@
 || {
-  use proconio::input;
+  /**** OUTPUT ****/
+  
+use proconio::input;
+use proconio::marker::*;
+use std::collections::*;
+use std::cmp::Reverse;
 
-  fn main() {
-    input!{
-      n:usize,
-      m:usize,
-      vals:[usize;n]
-    }
-    for v in vals {
-      println!("{}", v);
-    }
+fn main() {
+  input! {
+    n:usize,
   }
-
+}
+  
+/**** OUTPUT ****/
   main();
 }
-
+  

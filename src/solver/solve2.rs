@@ -1,17 +1,26 @@
 || {
-  use proconio::input;
+/**** OUTPUT ****/
 
-  fn main() {
-    input!{
-      n:usize,
-      m:usize,
-      vals:[usize;n]
-    }
-    for v in vals {
-      println!("{}", v);
-    }
+use proconio::input;
+use proconio::marker::*;
+use std::collections::*;
+use std::cmp::Reverse;
+
+fn main() {
+  input! {
+    s:Chars
   }
 
-  main();
+  let mut result = s.len();
+  for i in 1..s.len() {
+    if s[i-1] != s[i] {
+      let next = std::cmp::max(i, s.len()-i);
+      result = std::cmp::min(next, result);
+    }
+  }
+  println!("{}", result);
 }
 
+/**** OUTPUT ****/
+  main();
+}
