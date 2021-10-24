@@ -24,10 +24,12 @@ fn main() {
     fs::write(
         "./output/result",
         format!(
-            "/** OUTPUT **/
+            "/** THIS IS AN OUTPUT FILE. NOT EDIT THIS FILE DIRECTLY. **/
 {}",
             str[1].trim()
         ),
     )
     .unwrap();
+
+    println!("===============================");
 }
